@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+const _baseUrl = "https://jsonplaceholder.typicode.com/";
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -15,8 +16,10 @@ const createWindow = () => {
 
   app.whenReady().then(() => {
     createWindow()
+
   
     app.on('activate', () => {
       if (BrowserWindow.getAllWindows().length === 0) createWindow()
     })
   })
+
