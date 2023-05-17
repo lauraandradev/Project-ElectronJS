@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Electron: Main",
+        "type": "node",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+        "windows": {
+          "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+        },
+        "args": ["."],
+        "outputCapture": "std",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Electron: Renderer",
+        "type": "chrome",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+        "windows": {
+          "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+        },
+        "runtimeArgs": [
+          "${workspaceFolder}/main.js"
+        ],
+        "outputCapture": "std",
+        "webRoot": "${workspaceFolder}",
+        "sourceMaps": true
+      }
+    ]
+  }
+  
